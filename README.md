@@ -1,4 +1,4 @@
-# MLOps-project
+# Deberta-cls
 This task solves the NLP problem from this Kaggle competition (https://www.kaggle.com/competitions/pii-detection-removal-from-educational-data), in which it is required to build a model that detects personally identifiable information (PII) in students' writing. The task of this competition falls under Token Classification, sometimes known as Named Entity Recognition (NER).
 Given a corpus of 22,000 texts, essays written by students, one prompt at a time.
 The competition asks competitors to assign labels to the following seven types of PII:
