@@ -1,0 +1,25 @@
+[project]
+name = "deberta-cls"
+version = "0.1.0"
+description = "repo for mlops project at mipt with deberta classification"
+authors = [
+    {name = "mdr333@mail.ru"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy (>=2.2.3,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "torch (>=2.6.0,<3.0.0)",
+    "lightning (>=2.5.0.post0,<3.0.0)",
+    "argparse (>=1.4.0,<2.0.0)",
+    "pathlib (>=1.0.1,<2.0.0)",
+    "transformers (>=4.49.0,<5.0.0)",
+    "datasets (>=3.3.2,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
