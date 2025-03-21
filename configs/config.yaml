@@ -1,0 +1,8 @@
+defaults:
+  - model: model
+  - tokenization: tokenization
+  - data: data
+
+hydra:
+  run:
+    dir: ../logs/latest_run
