@@ -1,19 +1,22 @@
 import os
+from typing import List
 
 import hydra
 import numpy as np
 import pandas as pd
-from datasets import Dataset
+import pytorch_lightning as pl
 from omegaconf import DictConfig
-from transformers import AutoModelForMultipleChoice, AutoTokenizer, Trainer
+from transformers import AutoModelForMultipleChoice, AutoTokenizer
 
-from preprocess import DataCollatorForMultipleChoice, preprocess
+from pl_data import MultipleChoiceDataModule
+from pl_model import MultipleChoiceLightningModule
 
 index_to_option = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E"}
 
 
-def predictions_to_map_output(predictions):
-    sorted_answer_indices = np.argsort(-predictions)
+def predictions_to_map_output(predictions: List[np.ndarray]):
+    all_predictions = np.concatenate(predictions)
+    sorted_answer_indices = np.argsort(-all_predictions)
     top_answer_indices = sorted_answer_indices[
         :, :3
     ]  # Get the first three answers in each row
@@ -23,27 +26,18 @@ def predictions_to_map_output(predictions):
 
 @hydra.main(config_path="../configs", config_name="config", version_base=None)
 def main(cfg: DictConfig):
-    test_df = pd.read_csv(cfg.data.test_path)
-    test_df["answer"] = "A"
-    test_df = test_df[:3]
-    test_ds = Dataset.from_pandas(test_df)
     tokenizer = AutoTokenizer.from_pretrained(cfg.model.tokenizer_dir)
+    dm = MultipleChoiceDataModule(cfg, tokenizer)
+    dm.setup(stage="predict")
+
     model = AutoModelForMultipleChoice.from_pretrained(cfg.model.model_dir)
-    tokenized_test_ds = test_ds.map(
-        lambda example: preprocess(example, tokenizer),
-        batched=False,
-        remove_columns=cfg.tokenization.remove_columns,
-    )
+    lightning_model = MultipleChoiceLightningModule(cfg, model, tokenizer)
 
-    trainer = Trainer(
-        model=model,
-        tokenizer=tokenizer,
-        data_collator=DataCollatorForMultipleChoice(tokenizer=tokenizer),
-    )
+    trainer = pl.Trainer(accelerator="auto", devices="auto")
 
-    predictions = trainer.predict(tokenized_test_ds)
+    predictions = trainer.predict(lightning_model, datamodule=dm)
 
-    output_array = predictions_to_map_output(predictions.predictions)
+    output_array = predictions_to_map_output(predictions)
     output_df = pd.DataFrame({"prediction": output_array})
     output_df.to_csv(cfg.data.output_path, index=False)
 

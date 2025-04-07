@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/tadeuskostusko/Documents/Deberta-cls/scripts/mlruns/0/11e8967b7ff2415885762e4af94da928/artifacts
+end_time: 1743946071522
+entry_point_name: ""
+experiment_id: "0"
+lifecycle_stage: active
+run_id: 11e8967b7ff2415885762e4af94da928
+run_name: /Users/tadeuskostusko/Documents/Deberta-cls/models/model
+run_uuid: 11e8967b7ff2415885762e4af94da928
+source_name: ""
+source_type: 4
+source_version: ""
+start_time: 1743946053917
+status: 3
+tags: []
+user_id: tadeuskostusko

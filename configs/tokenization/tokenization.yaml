@@ -1,2 +1,2 @@
 remove_columns: ["prompt", "A", "B", "C", "D", "E", "answer"]
-num_proc: 4
+num_proc: 7
