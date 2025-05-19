@@ -1,4 +1,5 @@
 books/
 faiss_index/
-lighting_logs/
-embeddings.pkl
+lightning_logs/
+/embeddings.pkl
+__pycache__/
