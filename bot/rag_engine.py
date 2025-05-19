@@ -157,7 +157,3 @@ class ANSWER:
     def __call__(self):
         return self.answer
 
-
-# Использование:
-resp = ANSWER("who was the author of the The Special and General Theory book?")
-print(resp)  # или print(resp())
