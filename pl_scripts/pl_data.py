@@ -79,7 +79,7 @@ class MultipleChoiceDataModule(pl.LightningDataModule):
     def setup(self, stage=None):
         if stage == "fit" or stage is None:
             train_df = pd.read_csv(self.cfg.data.train_path)
-            train_df = train_df[:3]
+            # train_df = train_df[:3]
             train_ds = Dataset.from_pandas(train_df)
 
             self.tokenized_train_ds = train_ds.map(

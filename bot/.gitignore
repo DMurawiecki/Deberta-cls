@@ -1,0 +1,4 @@
+books/
+faiss_index/
+lighting_logs/
+embeddings.pkl
