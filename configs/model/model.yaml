@@ -1,7 +1,7 @@
 # paths
 model_name: bert-base-cased
-model_dir: /Users/tadeuskostusko/Documents/Deberta-cls/models/model
-tokenizer_dir: /Users/tadeuskostusko/Documents/Deberta-cls/models/tokenizer
+model_dir: /Users/tadeuskostusko/Desktop/sci_checked_bot/models/model
+tokenizer_dir: /Users/tadeuskostusko/Desktop/sci_checked_bot/models/tokenizer
 
 # training params
 learning_rate: 5e-5

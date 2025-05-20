@@ -12,8 +12,8 @@ from rag_engine import ANSWER
 import pandas as pd
 import sys
 
-sys.path.append("/Users/tadeuskostusko/Documents/Deberta-cls")
-sys.path.append("/Users/tadeuskostusko/Documents/Deberta-cls/pl_scripts")
+sys.path.append("/Users/tadeuskostusko/Desktop/sci_checked_bot")
+sys.path.append("/Users/tadeuskostusko/Desktop/sci_checked_bot/pl_scripts")
 
 
 load_dotenv()
@@ -46,10 +46,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception:
                 pass
         df = pd.DataFrame([answers], columns=columns)
-        df.to_csv("/Users/tadeuskostusko/Documents/Deberta-cls/data_store/test.csv")
+        df.to_csv("/Users/tadeuskostusko/Desktop/sci_checked_bot/data_store/test.csv")
         main()
         best_ans = pd.read_csv(
-            "/Users/tadeuskostusko/Documents/Deberta-cls/data_store/outputs.csv"
+            "/Users/tadeuskostusko/Desktop/sci_checked_bot/data_store/outputs.csv"
         )
         response_final = best_ans.iloc[0, 0][0]
         await update.message.reply_text(str(df[response_final][0]))

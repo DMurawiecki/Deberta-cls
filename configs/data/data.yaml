@@ -1,6 +1,6 @@
 # data
-train_path: /Users/tadeuskostusko/Documents/Deberta-cls/data_store/train.csv
-test_path: /Users/tadeuskostusko/Documents/Deberta-cls/data_store/test.csv
+train_path: /Users/tadeuskostusko/Desktop/sci_checked_bot/data_store/train.csv
+test_path: /Users/tadeuskostusko/Desktop/sci_checked_bot/data_store/test.csv
 
 # outputs
-output_path: /Users/tadeuskostusko/Documents/Deberta-cls/data_store/outputs.csv
+output_path: /Users/tadeuskostusko/Desktop/sci_checked_bot/data_store/outputs.csv

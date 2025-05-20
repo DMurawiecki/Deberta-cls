@@ -1123,6 +1123,21 @@ ssh = ["paramiko (>=2.4.3)"]
 websockets = ["websocket-client (>=1.3.0)"]
 
 [[package]]
+name = "dotenv"
+version = "0.9.9"
+description = "Deprecated package"
+optional = false
+python-versions = "*"
+groups = ["main"]
+markers = "python_version == \"3.11\" or python_version >= \"3.12\""
+files = [
+    {file = "dotenv-0.9.9-py2.py3-none-any.whl", hash = "sha256:29cf74a087b31dafdb5a446b6d7e11cbce8ed2741540e2339c69fbef92c94ce9"},
+]
+
+[package.dependencies]
+python-dotenv = "*"
+
+[[package]]
 name = "dpath"
 version = "2.2.0"
 description = "Filesystem-like pathing and searching for dictionaries"
@@ -6381,4 +6396,4 @@ cffi = ["cffi (>=1.11)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "9984fd642d871d9ad083e863733412bdbef6617d4969b7876d250a2a03da637b"
+content-hash = "f4d8b031c998d457d46c4615171561316cc66ad1cb0e2b16210315f0ca64211c"

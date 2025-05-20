@@ -49,7 +49,7 @@ class ANSWER:
             print("MISTRAL_API_KEY not found in environment variables.")
             sys.exit(1)
 
-        current_dir = "/Users/tadeuskostusko/Documents/Deberta-cls/bot"
+        current_dir = "/Users/tadeuskostusko//Desktop/sci_checked_bot/bot"
         books_dir = os.path.join(current_dir, "books")
         db_dir = os.path.join(current_dir, "db")
         persistent_directory = os.path.join(db_dir, "chroma_db_with_metadata")
