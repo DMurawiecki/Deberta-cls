@@ -11,8 +11,6 @@ from telegram.ext import (
 from rag_engine import ANSWER
 import pandas as pd
 import sys
-from pl_scripts.pl_infer import main
-import time
 
 sys.path.append("/Users/tadeuskostusko/Documents/Deberta-cls")
 sys.path.append("/Users/tadeuskostusko/Documents/Deberta-cls/pl_scripts")
@@ -32,22 +30,24 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    from pl_scripts.pl_infer import main
+
     user_text = update.message.text
     await update.message.chat.send_action(action="typing")
     try:
         answers = [0, user_text]
         columns = ["id", "prompt", "A", "B", "C", "D", "E"]
-        for _ in range(5):
-            resp = ANSWER(user_text)
-            answers.append(resp)
-            print("yeap")
-            time.sleep(20)
-        print("Mistal finishied")
+        count_ans = 0
+        while count_ans < 5:
+            try:
+                resp = ANSWER(user_text)
+                answers.append(resp)
+                count_ans += 1
+            except Exception:
+                pass
         df = pd.DataFrame([answers], columns=columns)
         df.to_csv("/Users/tadeuskostusko/Documents/Deberta-cls/data_store/test.csv")
-        # df = pd.read_csv('/Users/tadeuskostusko/Documents/Deberta-cls/data_store/test.csv')
         main()
-        print("bert done")
         best_ans = pd.read_csv(
             "/Users/tadeuskostusko/Documents/Deberta-cls/data_store/outputs.csv"
         )

@@ -135,7 +135,7 @@ class ANSWER:
         retriever = vector.as_retriever()
         model = ChatMistralAI(mistral_api_key=api_key)
 
-        prompt_template = """Answer the following question based only on the provided context. Do not tell "Based on the provided context" or "The provided context" or
+        prompt_template = """Answer the following question based on the provided context if it is. Do not tell "Based on the provided context" or "The provided context" or
         something like this:
 
         <context>
