@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "deberta-cls"
+name = "sci_checked_bot"
 version = "0.1.0"
-description = "repo for mlops project at mipt with deberta classification"
+description = "repo for mlops project at mipt with llm answers checking"
 authors = ["mdr333@mail.ru"]
 license = "MIT"
 readme = "README.md"
