@@ -25,6 +25,7 @@ langchain-community = "^0.3.24"
 langchain-mistralai = "^0.2.10"
 python-telegram-bot = "^22.1"
 dotenv = "^0.9.9"
+fire = "^0.7.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
