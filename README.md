@@ -1,4 +1,4 @@
-# Sci_checked_bot
+# Sci-checked-bot
 
 This repository solves the problem of ranking LLM responses with system based on
 a finetuned BERT model. User sends request to Telegram bot which is a RAG with
