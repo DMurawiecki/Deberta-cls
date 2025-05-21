@@ -15,3 +15,6 @@ save_strategy: epoch
 save_total_limit: 1
 seed: 42
 gradient_accumulation_steps: 1
+tracking_uri: http://127.0.0.1:8080
+save_top_k: 1
+every_n_epochs: 1

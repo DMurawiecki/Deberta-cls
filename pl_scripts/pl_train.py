@@ -31,7 +31,7 @@ def train(cfg: DictConfig, logger: str | None = None):
             experiment_name="Sci-checked-bot",
             run_name="current_run",
             save_dir=".",
-            tracking_uri="http://127.0.0.1:8080",
+            tracking_uri=cfg.model.get("tracking_uri", None),
         )
     else:
         callbacks = None

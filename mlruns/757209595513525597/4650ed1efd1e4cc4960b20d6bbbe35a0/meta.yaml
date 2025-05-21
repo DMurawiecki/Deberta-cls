@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/757209595513525597/4650ed1efd1e4cc4960b20d6bbbe35a0/artifacts
+end_time: 1747834527381
+entry_point_name: ""
+experiment_id: "757209595513525597"
+lifecycle_stage: active
+run_id: 4650ed1efd1e4cc4960b20d6bbbe35a0
+run_name: current_run
+run_uuid: 4650ed1efd1e4cc4960b20d6bbbe35a0
+source_name: ""
+source_type: 4
+source_version: ""
+start_time: 1747834518601
+status: 4
+tags: []
+user_id: tadeuskostusko
