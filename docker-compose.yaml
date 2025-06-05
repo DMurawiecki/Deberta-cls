@@ -4,13 +4,12 @@ services:
   triton:
     image: nvcr.io/nvidia/tritonserver:24.03-py3
     container_name: triton
-    # Монтируем локальную директорию triton_models/ как источник моделей
     volumes:
       - ./triton:/models
     ports:
-      - "8000:8000" # GRPC (не обязательно, но обычно картинка открывает GRPC+HTTP)
-      - "8001:8001" # HTTP/REST
-      - "8002:8002" # Metrics/Prometheus
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
     command: >
       tritonserver --model-repository=/models --strict-model-config=false
       --log-verbose=1

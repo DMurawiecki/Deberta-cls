@@ -24,22 +24,24 @@ If you want to delete your enviroment:
 make clean
 ```
 
-**Train** You can start training BERT model with MLFlow Logging on the local
-tracking server by using provided commands:
+## Train
 
-1. Activate MLFlow tracking server:
+You can start training BERT model with MLFlow Logging on the local tracking
+server by using provided commands:
+
+1. **Activate MLFlow tracking server:**
 
 ```bash
 make mlflow
 ```
 
-2. Download Data from Cloud Database:
+2. **Download Data from Cloud Database:**
 
 ```bash
 make download
 ```
 
-3. To start training pipeline:
+3. **To start training pipeline:**
 
 ```bash
 make train
@@ -54,18 +56,21 @@ python pl_train.py \
   --logger=mlflow
 ```
 
-**Infer** To start inference pipeline:
+## Infer
+
+**To start inference pipeline:**
 
 ```bash
 make infer
 ```
 
-**Production preparation**
+## Production preparation\*\*
 
-1. Provide your Mistral and Telegram_Bot API keys in .env file You can contact
-   me @dvacheski in telegram and I wil send you keys.
+1. **Provide your Mistral and Telegram_Bot API keys in .env file You can
+   contact** **me @dvachewski in telegram and I wil send you keys.**
 
-2. To run containers with Triton server with BERT model and with Telegram bot:
+2. **To run containers with Triton server with BERT model and with Telegram
+   bot:**
 
 ```bash
 make run_bot
@@ -73,8 +78,8 @@ make run_bot
 
 After running this command you can ask @SciCheckedBot in the Telegram
 
-To deactivate containers:
+**To deactivate containers:**
 
 ```bash
-make down_don
+make down_bot
 ```
