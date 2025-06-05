@@ -1,0 +1,35 @@
+# version: "3.8"
+
+services:
+  triton:
+    image: nvcr.io/nvidia/tritonserver:24.03-py3
+    container_name: triton
+    # Монтируем локальную директорию triton_models/ как источник моделей
+    volumes:
+      - ./triton:/models
+    ports:
+      - "8000:8000" # GRPC (не обязательно, но обычно картинка открывает GRPC+HTTP)
+      - "8001:8001" # HTTP/REST
+      - "8002:8002" # Metrics/Prometheus
+    command: >
+      tritonserver --model-repository=/models --strict-model-config=false
+      --log-verbose=1
+    restart: unless-stopped
+
+  bot:
+    build:
+      context: .
+      dockerfile: bot/Dockerfile
+    container_name: telegram_bot
+    volumes:
+      - ./models/model/hf_pretrained:/app/models/model/hf_pretrained:ro
+      - ./bot/books:/app/bot/books:ro
+      - ./bot:/app/bot:ro
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TRITON_URL=triton:8000
+      - TRITON_MODEL_NAME=my_bert_mc
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+    depends_on:
+      - triton
+    restart: unless-stopped

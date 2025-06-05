@@ -26,6 +26,10 @@ langchain-mistralai = "^0.2.10"
 python-telegram-bot = "^22.1"
 dotenv = "^0.9.9"
 fire = "^0.7.0"
+onnx = "^1.18.0"
+onnxruntime = "^1.22.0"
+gdown = "^5.2.0"
+tritonclient = {version = "^2.58.0", extras = ["http"]}
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

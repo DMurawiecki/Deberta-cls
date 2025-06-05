@@ -2,3 +2,5 @@ logs/
 .env
 .env*
 mlruns/
+model_onnx/
+triton/my_bert_mc/1/*
