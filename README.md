@@ -7,8 +7,11 @@ they go to our LLM checker and it ranks them. User gets the best answer.
 
 ![Схема архитектуры](images/architecture.png)
 
-There is Makefile which makes running pipelines much easier **Setup** To create
-and activate an enviroment do folowing steps:
+There is Makefile which makes running pipelines much easier
+
+## Setup
+
+To create and activate an enviroment do folowing steps:
 
 ```bash
 make setup
@@ -64,7 +67,7 @@ python pl_train.py \
 make infer
 ```
 
-## Production preparation\*\*
+## Production preparation
 
 1. **Provide your Mistral and Telegram_Bot API keys in .env file You can
    contact** **me @dvachewski in telegram and I wil send you keys.**
