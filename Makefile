@@ -81,6 +81,7 @@ infer: setup
 # -----------------------------------------------------------------------------
 run_bot:
 	@echo "🤖  Starting bot…"
+	@python download_model.py
 	@docker-compose up -d
 
 down_bot:
