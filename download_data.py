@@ -7,7 +7,7 @@ def download_data() -> None:
     folder_id_1 = "1ELxyBKdESWfiNmyX1AOsW6uph2h-XWMH"
     folder_id_2 = "1FxsuvrSfkPAyKePlwSCDgbIG8BSmkN5O"
     destination_folder_1 = "./"
-    destination_folder_2 = "./bot"
+    destination_folder_2 = "./bot/books"
     addresses = [
         (destination_folder_1, folder_id_1),
         (destination_folder_2, folder_id_2),
