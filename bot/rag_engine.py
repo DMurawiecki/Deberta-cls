@@ -27,6 +27,7 @@ def get_retriever_and_model():
 
     load_dotenv(override=True)
     api_key = os.environ.get("MISTRAL_API_KEY")
+    print("[DOCKER DEBUG] MISTRAL_API_KEY =", os.environ.get("MISTRAL_API_KEY"))
     if not api_key:
         print("MISTRAL_API_KEY not found in environment variables.")
         sys.exit(1)
