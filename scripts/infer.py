@@ -10,6 +10,7 @@ from transformers import AutoModelForMultipleChoice, AutoTokenizer, Trainer
 
 index_to_option = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E"}
 
+
 def predictions_to_map_output(predictions):
     sorted_answer_indices = np.argsort(-predictions)
     top_answer_indices = sorted_answer_indices[
