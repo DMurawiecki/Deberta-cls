@@ -1,7 +1,7 @@
 # paths
 model_name: bert-base-cased
 model_dir: ./models/model
-tokenizer_dir: ./models/tokenizer
+tokenizer_dir: ./models/model
 
 # training params
 learning_rate: 5e-5
