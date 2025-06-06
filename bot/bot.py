@@ -16,7 +16,7 @@ from tritonclient.http import InferenceServerClient, InferInput
 
 print("bot started")
 
-load_dotenv(override = True)
+load_dotenv(override=True)
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TRITON_URL = os.environ.get("TRITON_URL", "localhost:8000")
 MODEL_NAME = os.environ.get("TRITON_MODEL_NAME", "my_bert_mc")
