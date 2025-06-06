@@ -25,7 +25,7 @@ def get_retriever_and_model():
     if retriever is not None and model is not None:
         return retriever, model
 
-    load_dotenv()
+    load_dotenv(override = True)
     api_key = os.environ.get("MISTRAL_API_KEY")
     if not api_key:
         print("MISTRAL_API_KEY not found in environment variables.")
