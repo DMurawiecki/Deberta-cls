@@ -9,9 +9,8 @@ def download_model() -> None:
     )
     destination_folder = "./triton/my_bert_mc/"
     if not os.path.exists(destination_folder):
-        os.mkdirs(destination_folder, exist_ok=True)
+        os.makedirs(destination_folder, exist_ok=True)
     gdown.download_folder(url=model_url, output=destination_folder, quiet=False)
-
 
 if __name__ == "__main__":
     download_model()
