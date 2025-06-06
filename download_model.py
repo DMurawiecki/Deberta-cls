@@ -12,5 +12,6 @@ def download_model() -> None:
         os.makedirs(destination_folder, exist_ok=True)
     gdown.download_folder(url=model_url, output=destination_folder, quiet=False)
 
+
 if __name__ == "__main__":
     download_model()
