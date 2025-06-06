@@ -1,14 +1,1 @@
-stages:
-  download-data:
-    cmd: python download_data.py
-    deps:
-      - download_data.py
-    outs:
-      - bot/books
 
-  download-model:
-    cmd: python download_data.py
-    deps:
-      - download_data.py
-    outs:
-      - checkpoints
