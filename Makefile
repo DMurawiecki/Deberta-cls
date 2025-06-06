@@ -82,8 +82,9 @@ infer: setup
 run_bot:
 	@echo "🤖  Starting bot…"
 	@python download_model.py
-	@docker-compose up -d
+	@docker-compose up --build
 
 down_bot:
 	@echo "🛑  Stopping and removing containers…"
 	@docker-compose down
+	@echo "🛑  Containers removed successfully!"
