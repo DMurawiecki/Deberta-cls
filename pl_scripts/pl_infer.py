@@ -6,10 +6,9 @@ import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
 from omegaconf import DictConfig
-from transformers import AutoModelForMultipleChoice, AutoTokenizer
-
 from pl_data import MultipleChoiceDataModule
 from pl_model import MultipleChoiceLightningModule
+from transformers import AutoModelForMultipleChoice, AutoTokenizer
 
 index_to_option = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E"}
 
