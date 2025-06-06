@@ -11,7 +11,6 @@ from transformers import AutoTokenizer, PreTrainedTokenizerBase
 from transformers.tokenization_utils_base import PaddingStrategy
 
 
-
 def preprocess(example, tokenizer):
     # The AutoModelForMultipleChoice class expects a set of question/answer pairs
     # so we'll copy our question 5 times before tokenizing
