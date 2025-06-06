@@ -4,7 +4,7 @@ import torch
 from transformers import AutoModelForMultipleChoice, AutoTokenizer
 
 ckpt_path = "../models/model/epoch=02-val_loss=1.0025.ckpt"
-checkpoint_folder = "../models/model/checkpoint-3"
+checkpoint_folder = "../models/model"
 output_dir = "../models/model/hf_pretrained"
 os.makedirs(output_dir, exist_ok=True)
 
