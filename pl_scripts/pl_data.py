@@ -2,13 +2,14 @@ from dataclasses import dataclass
 from typing import Optional, Union
 
 import pandas as pd
-import torch
 import pytorch_lightning as pl
+import torch
 from datasets import Dataset
 from omegaconf import DictConfig
 from torch.utils.data import DataLoader
-from transformers import PreTrainedTokenizerBase, AutoTokenizer
+from transformers import AutoTokenizer, PreTrainedTokenizerBase
 from transformers.tokenization_utils_base import PaddingStrategy
+
 
 
 def preprocess(example, tokenizer):
