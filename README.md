@@ -50,7 +50,7 @@ make download
 make train
 ```
 
-Also you can use this command in the terminal to train without MLFLow:
+Also you can use this command in the terminal to train without MLFLow or change Makefile:
 
 ```bash
 python pl_scripts/pl_train.py \
