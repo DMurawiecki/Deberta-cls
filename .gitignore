@@ -5,3 +5,4 @@ mlruns/
 model_onnx/
 lightning_logs/
 notebooks/
+data_store/
