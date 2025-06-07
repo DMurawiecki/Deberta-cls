@@ -50,13 +50,13 @@ make download
 make train
 ```
 
-Also you can use this command in the terminal:
+Also you can use this command in the terminal to train without MLFLow:
 
 ```bash
-python pl_train.py \
+python pl_scripts/pl_train.py \
   --config_name=config \
   --overrides=model.seed=42,model.num_train_epochs=10 \
-  --logger=mlflow
+  --logger=None
 ```
 
 ## Infer
